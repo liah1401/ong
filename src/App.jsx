@@ -22,7 +22,7 @@ import Mission from './pages/Mission';
 import Comite from './pages/Comite';
 import Donation from './pages/Donation';
 import DevenirBenevole from './pages/DevenirBenevole';
-import NotreHistoire from './pages/DevenirBenevole';
+import NotreHist from './pages/DevenirBenevole';
 import 'antd/dist/reset.css';
 
 // Configuration du thème personnalisé
