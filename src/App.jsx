@@ -22,7 +22,8 @@ import Mission from './pages/Mission';
 import Comite from './pages/Comite';
 import Donation from './pages/Donation';
 import DevenirBenevole from './pages/DevenirBenevole';
-import NotreHist from './pages/DevenirBenevole';
+import Histoire from './pages/Histoire';
+import Membre from './pages/Membre';
 import 'antd/dist/reset.css';
 
 // Configuration du thème personnalisé
@@ -90,6 +91,7 @@ const menuItems = [
     children: [
       { label: <Link to="/don">Faire un don</Link>, key: '/don' },
       { label: <Link to="/benevole">Devenir bénévole</Link>, key: '/benevole' },
+      { label: <Link to="/membre">Devenir membre</Link>, key: '/membre' }, // Ajout de Membre ici
       { label: <Link to="/partenariats">Partenariats entreprises</Link>, key: '/partenariats' },
       { label: <Link to="/materiel">Collectes de matériel</Link>, key: '/materiel', icon: <ShoppingOutlined /> }
     ]
@@ -231,7 +233,8 @@ const AppLayout = () => {
               <Route path="/comite" element={<Comite />} />
               <Route path="/don" element={<Donation />} />
               <Route path="/benevole" element={<DevenirBenevole />} />
-              <Route path="/notre-histoire" element={<div>Notre histoire</div>} />
+              <Route path="/membre" element={<Membre />} /> {/* Route pour Membre */}
+              <Route path="/notre-histoire" element={<Histoire />} /> {/* Route pour Histoire */}
               <Route path="/partenaires" element={<div>Partenaires</div>} />
               <Route path="/documents" element={<div>Documents</div>} />
               <Route path="/education" element={<div>Éducation</div>} />
@@ -290,9 +293,11 @@ const AppLayout = () => {
             <div>
               <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 16 }}>Contact</div>
               <div style={{ color: '#666', lineHeight: 1.6 }}>
-                <div>📍 Kinshasa, RDC</div>
-                <div>📞 +243 810 000 000</div>
-                <div>✉️ contact@sef-ong.org</div>
+                <div>📍n° 374 de l’avenue colonel mondjiba, Immeuble Galerie saint pierre, local 18 dans la Commune de Ngaliema Kinshasa, RDC</div>
+                <div>📞 +243 897849917</div>
+                <div>📞 +243 834777258</div>
+                <div>📞 +1   6134474124</div>
+                <div>✉️ sefforever8@gmail.com</div>
               </div>
             </div>
 
@@ -302,7 +307,7 @@ const AppLayout = () => {
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                   <FacebookFilled style={{ fontSize: 24, color: '#2F54EB' }} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/souriredenfantsforever?igsh=YzJmNXZweGRma3Np&utm_source=qr" target="_blank" rel="noopener noreferrer">
                   <InstagramFilled style={{ fontSize: 24, color: '#E1306C' }} />
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -310,6 +315,16 @@ const AppLayout = () => {
                 </a>
                 <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
                   <YoutubeFilled style={{ fontSize: 24, color: '#FF0000' }} />
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" 
+                    alt="TikTok" 
+                    style={{ width: 24, height: 24 }} 
+                  />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <TwitterCircleFilled style={{ fontSize: 24, color: '#1DA1F2' }} />
                 </a>
               </Space>
             </div>

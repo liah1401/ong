@@ -9,58 +9,58 @@ const Comite = () => {
 
   const members = [
     {
-      name: "GAUTHIER LUKUNKU MULENGA",
-      role: "Président exécutif",
-      description: "15 ans d'expérience dans l'humanitaire, fondateur de l'association",
+      name: "MULENGA LUKUNKU GAUTHIER",
+      role: "Directeur Exécutif",
+      description: "Représente S.E.F ONG en justice et auprès des tiers. Convoque et préside l’Assemblée Générale. Nomme et démet les membres du Comité Exécutif.",
       color: "#1890ff"
     },
     {
-      name: "Marie Claire",
-      role: "Trésorière",
-      description: "Expert-comptable diplômée (DESCF) avec 10 ans d'expérience en gestion associative",
+      name: "YASOLELE BATOBA BERTHIER",
+      role: "Directeur Administratif",
+      description: "Élabore et met en œuvre les politiques internes. Supervise les activités administratives pour assurer leur bon fonctionnement.",
       color: "#13c2c2"
     },
     {
-      name: "Paul Martin",
-      role: "Secrétaire Général",
-      description: "Coordinateur des opérations terrain et gestion de projet international",
+      name: "LUVUIDI KILUSALA HERMAN",
+      role: "Directeur Financier",
+      description: "Mobilise et gère les fonds de S.E.F ONG. Prépare le budget et contrôle la comptabilité.",
       color: "#722ed1"
     },
     {
-      name: "Berthier",
-      role: "Directrice Administrative",
-      description: "Spécialiste en gestion des ressources humaines et logistique humanitaire",
+      name: " Godelieve MASIALA 	 ",
+      role: "Chargé des Relations Publiques",
+      description: "Assure la communication entre S.E.F ONG et les tiers. Promeut l’image de marque de l’organisation.",
       color: "#f5222d"
     },
     {
-      name: "JOSUAH LUKUNKU",
-      role: "Comptable Principal",
-      description: "Auditeur financier certifié, gestion des budgets multi-projets",
+      name: "MBONGO MEDDY ",
+      role: "Chargé des Approvisionnements",
+      description: "Gère la quantification, l’achat, le dédouanement et la distribution des dons aux enfants et aux personnes en difficulté.",
       color: "#52c41a"
     },
     {
-      name: "LUKUNKU REMY",
-      role: "Directrice Juridique",
-      description: "Juriste en droit des associations et protection de l'enfance",
+      name: "NGOMA MURPHY ",
+      role: "Chargé du Suivi, Évaluation et Reportage",
+      description: "Développe des outils de suivi et évalue les programmes et services gérés par l’organisation.",
       color: "#fa8c16"
     },
     {
-      name: "ISRAELLE KAMBA",
-      role: "Directeur Suivi & Évaluation",
-      description: "Expert en analyse d'impact et méthodologies qualitatives",
+      name: "LUSADISU STAVELINE  ",
+      role: "Comptable",
+      description: "Enregistre les opérations financières, réalise les documents de synthèse et prépare les bilans.",
       color: "#eb2f96"
     },
     {
-      name: "PERNELLE LUKUNKU",
-      role: "Responsable Communication",
-      description: "Stratégie digitale et relations presse, gestion des réseaux sociaux",
-      color: "#2f54eb"
+      name: "KASA VIVALDI  ",
+      role: "Secrétaire",
+      description: "Permet à l’organisation de fonctionner en conformité, de rendre des comptes à ses parties prenantes et de se concentrer sur sa mission sociale",
+      color: "#eb2f96"
     },
     {
-      name: "Jean paul",
+      name: "BITANTA RACHEL",
       role: "Caissier",
-      description: "Gestion des flux financiers et contrôle des dépenses opérationnelles",
-      color: "#a0d911"
+      description: "S’occupe de la gestion des espèces et des flux financiers de la caisse.",
+      color: "#2f54eb"
     }
   ];
 
