@@ -1,17 +1,20 @@
 /* index.css propre pour ton site */
 
+/* Fond général */
 html, body, #root {
   height: 100%;
   margin: 0;
-  background-color: #f0f2f5; /* Fond gris clair moderne */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6fc; /* Fond gris clair moderne */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Contenu principal blanc */
+/* Contenu principal */
 .site-layout-content {
-  background: #fff;
+  background: #ffffff; /* Fond blanc pour le contenu */
   padding: 24px;
   min-height: 280px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ombre légère */
 }
 
 /* Corrige tout */
@@ -21,32 +24,73 @@ html, body, #root {
 
 /* Liens */
 a {
-  color: #1890ff;
+  color: #2F54EB; /* Bleu principal */
   text-decoration: none;
+  font-weight: 500;
 }
 a:hover {
   text-decoration: underline;
+  color: #597EF7; /* Bleu clair au survol */
 }
 
-/* Boutons normaux */
+/* Boutons */
 button {
   font-family: inherit;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 84, 235, 0.3); /* Ombre au survol */
 }
 
 /* Titres */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
+  color: #2F54EB; /* Bleu principal */
 }
+
+/* Checkbox personnalisée */
 .custom-checkbox-group .ant-checkbox-inner {
   border-radius: 4px !important;
 }
 
 .custom-checkbox-group .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #2F80ED;
-  border-color: #2F80ED;
+  background-color: #2F54EB;
+  border-color: #2F54EB;
 }
 
 .custom-checkbox-group .ant-checkbox-wrapper:hover .ant-checkbox-inner {
-  border-color: #2F80ED !important;
+  border-color: #597EF7 !important;
+}
+
+/* Pied de page */
+footer {
+  background-color: #f8f9fa;
+  color: #666;
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .site-layout-content {
+    padding: 16px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  .site-layout-content {
+    padding: 12px;
+  }
 }

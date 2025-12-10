@@ -1,106 +1,237 @@
-import { Typography, Grid } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
+import { Typography, Grid, Row, Col, Card, Button } from 'antd';
+import { TeamOutlined, BookOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
 
 const Histoire = () => {
   const screens = useBreakpoint();
-  
-  const content = [
-    `Le 11 novembre 2024, à Kinshasa, capitale de la République Démocratique du Congo, 
-    un groupe de visionnaires s'est réuni pour répondre à une urgence humanitaire. 
-    La RDC, classée parmi les pays les plus pauvres au monde, fait face à des défis colossaux : 
-    des taux de mortalité élevés, un manque d'investissements dans les secteurs essentiels 
-    tels que la santé, l'agriculture et les infrastructures, et une instabilité politique 
-    aggravée par des conflits armés.`,
 
-    `Dans ce contexte de précarité extrême, des millions de personnes, et en particulier 
-    les enfants, vivent sans accès à des besoins fondamentaux comme la nourriture, 
-    les vêtements ou les soins de santé. Certains enfants sont abandonnés, d'autres 
-    survivent dans des orphelinats, des prisons ou dans la rue, sans aucun espoir pour l'avenir.`,
+  // Palette de couleurs mise à jour
+  const colors = {
+    primary: '#4A90E2',    // Bleu doux
+    secondary: '#50E3C2',  // Vert menthe
+    accent: '#F5A623',     // Orange pastel
+    background: '#F7F8FA', // Fond gris clair
+    text: '#333333',       // Texte sombre
+    white: '#FFFFFF'       // Blanc
+  };
 
-    `Animés par le désir de redonner un sourire à ces enfants et de transformer leur vie, 
-    nous avons décidé de créer une organisation dédiée à leur bien-être. C'est ainsi 
-    qu'est née Sourire d’Enfants Forever (SEF), une association sans but lucratif. 
-    Notre mission est claire : améliorer les conditions de vie des enfants vulnérables 
-    en RDC et au-delà, en collaboration étroite avec le gouvernement et d'autres partenaires.`,
+  const founders = [
+    { name: "MULENGA LUKUNKU Gauthier", role: "Président Fondateur" },
+    { name: "NGOYI YAMBELE Armand", role: "Stratège en Développement" },
+    { name: "NGASHI MALANGO Junior", role: "Coordinateur des Projets" },
+    { name: "YASOLELE BATOBA Berthier", role: "Expert en Logistique" },
+    { name: "LUKUNKU NGASHI Joshwa", role: "Responsable Partenariats" },
+    { name: "BAKWANAMAHA KIAKIMUA Mathylde", role: "Chargée de Communication" },
+    { name: "NGASHI NKONGOLO Jude", role: "Trésorier" },
+    { name: "LUKUNKU NKONGOLO Rémy", role: "Conseiller Juridique" },
+    { name: "LUVUIDI KILUSALA Herman", role: "Responsable Finances" }
+  ];
 
-    `Depuis sa création, SEF s'engage à offrir un avenir meilleur à ces enfants en 
-    intervenant dans plusieurs domaines clés : l'éducation, la santé, la nutrition, 
-    et bien plus encore. Ensemble, nous croyons qu'un sourire peut changer une vie, 
-    et qu'aucun enfant ne devrait être laissé pour compte.`
+  const historyContent = [
+    `Créé en 2024 à Kinshasa, notre organisation est née d'une urgence : offrir un avenir 
+    aux enfants oubliés de la RDC. Face à la pauvreté et aux conflits, notre mission est de redonner espoir.`,
+    
+    `Nous intervenons dans 5 domaines clés : Éducation, Santé, Nutrition, 
+    Protection sociale et Développement communautaire. Chaque jour, nos équipes 
+    sur le terrain font la différence.`,
+    
+    `Avec déjà plus de 2000 enfants aidés et 15 projets actifs, nous construisons 
+    des solutions durables grâce à l'engagement de nos donateurs et partenaires.`
   ];
 
   return (
     <div style={{ 
-      padding: screens.xs ? '16px' : '24px',
-      maxWidth: '800px',
-      margin: '0 auto',
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      borderRadius: '20px',
-      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-      backdropFilter: 'blur(10px)',
-      border: '1px solid rgba(255, 255, 255, 0.3)'
+      padding: screens.xs ? '16px' : '40px',
+      background: colors.background,
+      minHeight: '100vh'
     }}>
-      <Title 
-        level={screens.xs ? 3 : 2}
+      {/* En-tête */}
+      <div style={{ 
+        textAlign: 'center', 
+        marginBottom: '40px',
+        padding: '30px',
+        background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`,
+        borderRadius: '15px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
+      }}>
+        <Title 
+          level={1} 
+          style={{ 
+            color: colors.white,
+            fontFamily: "'Inter', sans-serif",
+            fontSize: screens.xs ? '2.5rem' : '3.5rem',
+            fontWeight: 'bold',
+            letterSpacing: '1px'
+          }}
+        >
+          Notre Histoire
+        </Title>
+      </div>
+
+      {/* Section Histoire */}
+      <Card
         style={{ 
-          textAlign: 'center',
-          margin: screens.xs ? '20px 0' : '40px 0',
-          color: 'transparent',
-          background: 'linear-gradient(45deg, #1890ff, #6ec4ff)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          position: 'relative',
-          paddingBottom: '15px',
-          fontWeight: '600'
+          marginBottom: '40px',
+          borderRadius: '15px',
+          border: `1px solid ${colors.secondary}`,
+          background: colors.white,
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
         }}
       >
-        <SmileOutlined style={{ 
-          marginRight: '10px', 
-          fontSize: screens.xs ? '28px' : '36px',
-          verticalAlign: 'middle' 
-        }} />
-        Notre Histoire
-        <div style={{
-          position: 'absolute',
-          bottom: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '60px',
-          height: '4px',
-          backgroundColor: '#6ec4ff',
-          borderRadius: '2px',
-          transition: 'all 0.3s ease'
-        }} />
-      </Title>
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          marginBottom: '20px',
+          padding: '20px',
+          background: colors.secondary,
+          borderRadius: '15px 15px 0 0'
+        }}>
+          <BookOutlined style={{ 
+            fontSize: '32px', 
+            color: colors.white,
+            marginRight: '20px' 
+          }}/>
+          <Title level={3} style={{ color: colors.white, margin: 0 }}>
+            Notre Mission
+          </Title>
+        </div>
 
-      <div style={{ padding: screens.xs ? '0 10px' : '0 20px' }}>
-        {content.map((text, index) => (
-          <Paragraph 
-            key={index}
-            style={{ 
-              fontSize: screens.xs ? '14px' : '16px',
-              lineHeight: '1.8',
-              textAlign: screens.xs ? 'left' : 'justify',
-              marginBottom: '30px',
-              padding: '15px',
-              borderRadius: '10px',
-              backgroundColor: index % 2 === 0 ? '#f8fbff' : '#f0f9ff',
-              borderLeft: `4px solid ${index % 2 === 0 ? '#1890ff' : '#6ec4ff'}`,
-              transition: 'all 0.3s ease',
+        <div style={{ padding: '20px' }}>
+          {historyContent.map((text, index) => (
+            <div key={index} style={{
+              padding: '20px',
+              marginBottom: '20px',
+              background: index % 2 === 0 ? `${colors.primary}10` : `${colors.accent}10`,
+              borderRadius: '12px',
+              borderLeft: `4px solid ${index % 2 === 0 ? colors.primary : colors.accent}`,
+              transition: 'transform 0.3s',
               cursor: 'pointer',
-              transform: 'translateY(0)',
               ':hover': {
-                transform: 'translateY(-2px)',
-                boxShadow: '0 4px 12px rgba(24, 144, 255, 0.15)'
+                transform: 'scale(1.02)'
               }
-            }}
-          >
-            {text}
-          </Paragraph>
-        ))}
+            }}>
+              <Paragraph style={{ 
+                fontSize: '1.1rem',
+                lineHeight: 1.8,
+                margin: 0,
+                color: colors.text
+              }}>
+                {text}
+              </Paragraph>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* Section Fondateurs */}
+      <Card
+        title={
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center',
+            padding: '0 20px',
+            color: colors.primary,
+            fontSize: '1.5rem'
+          }}>
+            <TeamOutlined style={{ marginRight: '15px' }}/>
+            Membres Fondateurs
+          </div>
+        }
+        headStyle={{ 
+          borderBottom: `3px solid ${colors.primary}`,
+          padding: '20px 0'
+        }}
+        style={{ 
+          borderRadius: '15px',
+          border: `1px solid ${colors.primary}`,
+          overflow: 'hidden',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+        }}
+      >
+        <Row gutter={[20, 20]} justify="center">
+          {founders.map((founder, index) => {
+            const bgColor = [colors.secondary, colors.primary, colors.accent][index % 3];
+            return (
+              <Col key={founder.name} xs={24} sm={12} md={8} lg={8}>
+                <div style={{
+                  padding: '25px',
+                  borderRadius: '15px',
+                  background: `${bgColor}10`,
+                  border: `2px solid ${bgColor}`,
+                  transition: 'all 0.3s',
+                  ':hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: `0 8px 24px ${bgColor}30`
+                  }
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: bgColor,
+                    borderRadius: '50%',
+                    margin: '0 auto 20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: colors.white,
+                    fontWeight: 'bold',
+                    fontSize: '28px',
+                    boxShadow: `0 4px 12px ${bgColor}40`
+                  }}>
+                    {founder.name.charAt(0)}
+                  </div>
+                  <Title level={5} style={{ 
+                    marginBottom: '8px',
+                    color: bgColor,
+                    textAlign: 'center',
+                    fontSize: '1.2rem'
+                  }}>
+                    {founder.name}
+                  </Title>
+                  <Paragraph style={{ 
+                    color: colors.text,
+                    textAlign: 'center',
+                    fontWeight: 600,
+                    margin: 0
+                  }}>
+                    {founder.role}
+                  </Paragraph>
+                </div>
+              </Col>
+            )}
+          )}
+        </Row>
+      </Card>
+
+      {/* CTA */}
+      <div style={{ 
+        textAlign: 'center', 
+        marginTop: '40px',
+        padding: '30px',
+        background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`,
+        borderRadius: '15px'
+      }}>
+        <Title level={3} style={{ color: colors.white, marginBottom: '20px' }}>
+          Rejoignez notre mission !
+        </Title>
+        <Button 
+          type="primary" 
+          size="large"
+          style={{ 
+            background: colors.accent,
+            borderColor: colors.accent,
+            color: colors.white,
+            fontWeight: 'bold',
+            padding: '0 40px',
+            height: '50px',
+            borderRadius: '25px',
+            fontSize: '1.1rem'
+          }}
+        >
+          Devenir Bénévole
+        </Button>
       </div>
     </div>
   );

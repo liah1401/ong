@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { Form, Input, Button, DatePicker, Checkbox, Row, Col, Typography, Alert, Result } from 'antd';
-import { SmileOutlined, CalendarOutlined, ToolOutlined, TeamOutlined } from '@ant-design/icons';
+import { Form, Input, Button, DatePicker, Checkbox, Row, Col, Typography, Alert, Result, Select } from 'antd'; // Ajout de Select pour le choix du pays
+import { SmileOutlined, CalendarOutlined, ToolOutlined, TeamOutlined, PhoneOutlined, HomeOutlined } from '@ant-design/icons'; // Ajout d'icônes pour téléphone et adresse
 import { Link, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/fr';
+import PhoneInput from 'react-phone-input-2'; // Ajout de PhoneInput pour le numéro de téléphone
+import 'react-phone-input-2/lib/style.css';
 
 moment.locale('fr');
 
@@ -22,6 +24,16 @@ const theme = {
   spacing: '24px',
   button: 'linear-gradient(135deg, #2EC4B6, #3A86FF)'
 };
+
+// List of countries for the Select component
+const countries = [
+  { name: 'France' },
+  { name: 'Belgique' },
+  { name: 'Suisse' },
+  { name: 'Canada' },
+  { name: 'États-Unis' },
+  { name: 'Royaume-Uni' }
+];
 
 const DevenirBenevole = () => {
   const [form] = Form.useForm();
@@ -215,7 +227,7 @@ const DevenirBenevole = () => {
                   />
                 </Form.Item>
 
-                <Form.Item name="email" label={<Text strong style={{ color: theme.secondary }}>Adresse Email</Text>}>
+                <Form.Item name="email" label={<Text strong style={{ color: theme.secondary }}>Adresse Email</Text>} rules={[{ required: true, message: 'Veuillez entrer votre email' }]}>
                   <Input
                     placeholder="jean@exemple.com"
                     style={{ 
@@ -226,14 +238,26 @@ const DevenirBenevole = () => {
                   />
                 </Form.Item>
 
-                <Form.Item name="telephone" label={<Text strong style={{ color: theme.secondary }}>Téléphone</Text>}>
-                  <Input
-                    placeholder="06 12 34 56 78"
-                    style={{ 
+                <Form.Item
+                  name="phone"
+                  label={<Text strong style={{ color: theme.secondary }}>Numéro de Téléphone</Text>}
+                  rules={[{ required: true, message: 'Veuillez entrer un numéro de téléphone valide' }]}
+                >
+                  <PhoneInput
+                    country={'fr'} // Pays par défaut : France
+                    enableSearch
+                    placeholder="Entrez votre numéro de téléphone"
+                    inputStyle={{
+                      width: '100%',
                       borderRadius: theme.borderRadius,
                       border: `1px solid ${theme.primary}30`
                     }}
-                    prefix={<span style={{ marginRight: '8px', color: theme.secondary }}>📱</span>}
+                    buttonStyle={{
+                      borderRadius: '4px 0 0 4px'
+                    }}
+                    containerStyle={{
+                      width: '100%'
+                    }}
                   />
                 </Form.Item>
 
@@ -245,6 +269,48 @@ const DevenirBenevole = () => {
                       border: `1px solid ${theme.primary}30`
                     }}
                     suffixIcon={<CalendarOutlined style={{ color: theme.secondary }} />}
+                  />
+                </Form.Item>
+
+                <Form.Item name="progression" label={<Text strong style={{ color: theme.secondary }}>Progression</Text>} rules={[{ required: true, message: 'Veuillez indiquer votre progression' }]}>
+                  <Input
+                    placeholder="Débutant, Intermédiaire, Expert..."
+                    style={{ 
+                      borderRadius: theme.borderRadius,
+                      border: `1px solid ${theme.primary}30`
+                    }}
+                    prefix={<ToolOutlined style={{ marginRight: '8px', color: theme.secondary }} />}
+                  />
+                </Form.Item>
+
+                <Form.Item
+                  name="pays"
+                  label={<Text strong style={{ color: theme.secondary }}>Pays</Text>}
+                  rules={[{ required: true, message: 'Veuillez sélectionner votre pays' }]}
+                >
+                  <Select
+                    placeholder="Sélectionnez votre pays"
+                    style={{
+                      borderRadius: theme.borderRadius,
+                      border: `1px solid ${theme.primary}30`
+                    }}
+                  >
+                    {Object.values(countries).map((country) => (
+                      <Select.Option key={country.name} value={country.name}>
+                        {country.name}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </Form.Item>
+
+                <Form.Item name="adresse" label={<Text strong style={{ color: theme.secondary }}>Adresse</Text>} rules={[{ required: true, message: 'Veuillez entrer votre adresse' }]}>
+                  <Input
+                    placeholder="123 Rue Exemple, Ville"
+                    style={{
+                      borderRadius: theme.borderRadius,
+                      border: `1px solid ${theme.primary}30`
+                    }}
+                    prefix={<HomeOutlined style={{ marginRight: '8px', color: theme.secondary }} />}
                   />
                 </Form.Item>
               </div>
