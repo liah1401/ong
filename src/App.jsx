@@ -37,7 +37,8 @@ import Temoignages from './pages/Temoignages';
 import 'antd/dist/reset.css';
 
 // Import du logo
-import logo from "C:/Users/maeli/OneDrive/Images/Sourired'enfant logo.jpg";
+import logo from "./assets/sourire-logo.jpg";
+
 
 // PALETTE DE COULEURS BLEUE PROFESSIONNELLE
 const COLORS = {
